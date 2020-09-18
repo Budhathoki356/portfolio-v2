@@ -212,6 +212,19 @@ img {
     padding: 15px;
 }
 
+.links {
+    padding: 20px 0;
+}
+
+.links a {
+    padding:0 10px;
+    font-size: 2em;
+    color: #1d83d6;
+}
+.links a:hover {
+    color: #000;
+}
+
 .formBx {
     min-width: 60%;
 }
