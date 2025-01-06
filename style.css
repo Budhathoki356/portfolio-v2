@@ -125,6 +125,7 @@ header.sticky ul li a {
     color: #111;
 }
 
+/* about section */
 .about {
     margin-left: 80px;
     margin-right: 80px;
@@ -135,7 +136,7 @@ header.sticky ul li a {
     font-size: 30px;
 }
 
-.content {
+.about .content {
     display: flex;
     justify-content: space-between;
 }
@@ -168,61 +169,90 @@ header.sticky ul li a {
     min-width: 50px;
 }
 
-img {
-    max-width: 100%;
+.avatar-img {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+   object-fit: cover;
 }
 
-.projects {
-    background-color: #111;
+/* skills section */
+.skills-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.heading.white {
-    color: #fff;
-}
+/* project section */
 
 .projects .content {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 20px;
+    padding: 20px;
+    max-width: 1800px;
+    margin: 0 auto;
 }
 
 .projects .content .projectBx {
-    padding: 40px 20px;
-    color: #fff;
-    max-width: 350px;
-    margin: 20px;
-    text-align: center;
-    transition: 0.5s;
-    border-radius: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden; /* Ensures image doesn't overflow the card */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .projects .content .projectBx:hover {
-    background-color: #fff;
-    color: #000;
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.projects .content .projectBx img {
-    max-width: 100%;
+.projects .content .projectBx .projectBx-inner {
+    padding: 20px;
+}
+
+.projects .content .projectBx > img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border: 1px solid #2196f3;
+    border-radius: 8px;
 }
 
 .projects .content .projectBx h2 {
-    font-size: 1.5em;
+    font-size: 2em;
     font-weight: 600;
-    padding: 15px;
+    padding: 15px 15px 15px 0px;
+}
+
+.projects .content .projectBx p {
+    color: #a0a0a0;
 }
 
 .links {
     padding: 20px 0;
 }
 
-.links a {
-    padding:0 10px;
-    font-size: 2em;
-    color: #1d83d6;
+.links > a > img {
+    width: 30px;
+    height: 30px;
 }
+
 .links a:hover {
+    cursor: pointer;
     color: #000;
+}
+
+/* Contact Section */
+.contact .content {
+    display: flex;
 }
 
 .formBx {
@@ -386,6 +416,11 @@ img {
 }
 
 @media(max-width:1000px) {
+    section {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
     .contentBx {
         font-size: 16px;
         margin-bottom: 24px;
@@ -396,9 +431,29 @@ img {
     .w50 {
         min-width: 300px;
     }
+    .about .content{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .projects .content {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .projects .content .projectBx > img {
+        height: 250px;
+    }
 }
 
 @media(max-width:700px) {
+    section {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .avatar-img {
+        width: 150px;
+        height: 150px;
+    }
     .contentBx {
         font-size: 14px;
     }
@@ -408,11 +463,18 @@ img {
     .heading p {
         font-size: 14px;
     }
+    .projects .content .projectBx > img {
+        height: 150px;
+    }
     .projects .content .projectBx h2 {
         font-size: 1.2em;
     }
     .projectBx p {
         font-size: 0.9em;
+    }
+    .links > a > img {
+        width: 24px;
+        height: 24px;
     }
     section {
         padding: 100px 40px;
