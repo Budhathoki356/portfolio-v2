@@ -252,7 +252,7 @@ header.sticky ul li a {
 
 /* Contact Section */
 .contact .content {
-    display: flex;
+    /* display: flex; */
 }
 
 .formBx {
@@ -294,24 +294,25 @@ header.sticky ul li a {
 }
 
 .contactInfo {
-    min-width: 40%;
+    /* min-width: 40%; */
 }
 
 .contactInfoBx {
     position: relative;
+    display: flex;
+    justify-content: space-between;
+
 }
 
 .contactInfoBx .box {
     position: relative;
     padding: 20px 0;
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.contactInfoBx .box i{
-    min-width: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
+.contactInfoBx .box i{   
     font-size: 24px;
 }
 
